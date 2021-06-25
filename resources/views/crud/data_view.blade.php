@@ -4,8 +4,15 @@
     <div class="container">
         <div class="col-md-8">
            <div class="card">
-               <div class="card-header"><span style="font-weight: bold;">User's Data</span><span style="float: right;"><button type="button" class="btn btn-primary">Add User</button></span></div>
+               <div class="card-header"><span style="font-weight: bold;">User's Data</span><span style="float: right;">
+                       <a href="{{route('user-create')}}" type="button" class="btn btn-primary">Add User</a></span>
+               </div>
                <div class="card-body">
+                   @if (session('status'))
+                       <div class="alert alert-success" role="alert">
+                           {{ session('status') }}
+                       </div>
+                   @endif
                    <table class="table">
                        <thead class="thead-dark">
                        <tr>
@@ -17,9 +24,10 @@
                        </tr>
                        </thead>
                        <tbody>
+                       @php($sl=1)
                        @foreach($users as $user)
                        <tr>
-                           <th>1</th>
+                           <th>{{$sl++}}</th>
                            <td>{{$user->name}}</td>
                            <td>{{$user->email}}</td>
                            <td>{{$user->password}}</td>
