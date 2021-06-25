@@ -9,8 +9,8 @@ class MainController extends Controller
 {
     public function show ()
     {
-        //$user=new User();
-        //return $user=User::all();
-        return view('crud.data_view');
+        $users=new User();
+        $users=User::all();
+        return view('crud.data_view',['users'=>$users]);
     }
 }
