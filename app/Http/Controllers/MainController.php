@@ -61,4 +61,12 @@ class MainController extends Controller
 
         return redirect('/')->with('status','Data Upadated Successfully');
     }
+
+    public function delete($id)
+    {
+      $users=User::find($id);
+      $users->delete();
+
+      return redirect('/')->with('status','Data Deleted Successfully');
+    }
 }

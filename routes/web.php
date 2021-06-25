@@ -18,3 +18,4 @@ Route::get('/user/create','MainController@create')->name('user-create');
 Route::post('/user/store','MainController@store')->name('user-store');
 Route::get('/user/edit/{id}','MainController@edit')->name('user-edit');
 Route::post('/user/update{id}', 'MainController@update')->name('user-update');
+Route::get('/user/delete/{id}', 'MainController@delete')->name('user-delete');

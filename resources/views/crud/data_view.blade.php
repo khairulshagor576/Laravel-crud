@@ -35,7 +35,7 @@
                                <a href="{{route('user-edit',$user->id)}}" class="btn btn-success">Edit
                                    <i class="fa fa-edit"></i>
                                </a>
-                               <a href="" class="btn btn-danger">Delete
+                               <a href="{{route('user-delete',$user->id)}}" class="btn btn-danger">Delete
                                    <i class="fa fa-trash"></i>
                                </a>
                            </td>
