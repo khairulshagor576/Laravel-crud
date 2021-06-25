@@ -5,7 +5,7 @@
         <div class="card">
             <div class="card-header">Add User's</div>
             <div class="card-body">
-                <form class="form-horizontal" method="post" action="{{route('/')}}}" enctype="multipart/form-data">
+                <form class="form-horizontal" method="post" action="{{route('user-update',$users->id)}}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="name">Name</label>

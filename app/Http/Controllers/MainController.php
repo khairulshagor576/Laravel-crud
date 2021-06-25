@@ -42,4 +42,23 @@ class MainController extends Controller
 
         return view('crud.data_edit',['users'=>$users]);
     }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request,[
+            'name'=>'required|string',
+            'email'=>'required|string',
+            'password'=>'required'
+        ]);
+
+        $users=User::find($id);
+
+        $users->name = $request->name;
+        $users->email = $request->email;
+        $users->password = $request->password;
+
+        $users->save();
+
+        return redirect('/')->with('status','Data Upadated Successfully');
+    }
 }
