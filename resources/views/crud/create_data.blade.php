@@ -3,7 +3,8 @@
 @section('content')
     <div class="container">
         <div class="card">
-            <div class="card-header">Add User's</div>
+            <div class="card-header"><span>Add User's</span> <span style="float: right;">
+                       <a href="{{route('user-dashbord')}}" type="button" class="btn btn-primary">Back</a></span></div>
             <div class="card-body">
                 <form class="form-horizontal" method="post" action="{{route('user-store')}}" enctype="multipart/form-data">
                     @csrf

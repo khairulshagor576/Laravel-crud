@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'MainController@show');
+Route::get('/', 'MainController@show')->name('user-dashbord');
 Route::get('/user/create','MainController@create')->name('user-create');
 Route::post('/user/store','MainController@store')->name('user-store');
+Route::get('/user/edit/{id}','MainController@edit')->name('user-edit');

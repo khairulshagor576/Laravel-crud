@@ -32,7 +32,7 @@
                            <td>{{$user->email}}</td>
                            <td>{{$user->password}}</td>
                            <td>
-                               <a href="" class="btn btn-success">Edit
+                               <a href="{{route('user-edit',$user->id)}}" class="btn btn-success">Edit
                                    <i class="fa fa-edit"></i>
                                </a>
                                <a href="" class="btn btn-danger">Delete

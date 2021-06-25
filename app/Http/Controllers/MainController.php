@@ -21,6 +21,11 @@ class MainController extends Controller
 
     public function store (Request $request)
     {
+        $this->validate($request,[
+            'name'=>'required|string',
+            'email'=>'required|string',
+            'password'=>'required'
+        ]);
         $users=new User();
         $users->name     = $request->name;
         $users->email    = $request->email;
@@ -28,5 +33,13 @@ class MainController extends Controller
         $users->save();
 
         return redirect('/')->with('status','Data Save Successfully');
+    }
+
+    public function edit($id)
+    {
+        $users=new User();
+        $users=User::find($id);
+
+        return view('crud.data_edit',['users'=>$users]);
     }
 }
